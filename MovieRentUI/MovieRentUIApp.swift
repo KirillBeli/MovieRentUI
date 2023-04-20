@@ -11,7 +11,11 @@ import SwiftUI
 struct MovieRentUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                LaunchView()
+            }
+            .statusBarHidden(true)
+            
         }
     }
 }
