@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @StateObject private var launchModel: LaunchViewModel = LaunchViewModel()
     @ObservedObject private var homeModel: HomeViewModel = HomeViewModel()
-    @State private var showSheet: Bool = false
+    
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct HomeView: View {
                 BuildedHome
             }
         }
-        .actionSheet(isPresented: $showSheet, content: homeModel.getActionSheet)
+        .actionSheet(isPresented: homeModel.$showSheet, content: homeModel.getActionSheet)
         .onAppear {
             TimeManager.shared.delay(seconds: 3) {
                 self.launchModel.firstTimeOpen = false
@@ -38,7 +38,7 @@ extension HomeView {
         ZStack {
             VStack {
                 ToolBarView(title: homeModel.title, hidden: true, rightIcon: "line.3.horizontal.decrease.circle.fill") {} onTapRight: {
-                    showSheet.toggle()
+                    homeModel.showSheet.toggle()
                 }
                 SearchBarView(searchText: $homeModel.searchText)
                 MovieList

@@ -9,18 +9,18 @@ import SwiftUI
 
 struct DetailsView: View {
     
-    @ObservedObject var detailsModel: DetailsViewModel = DetailsViewModel()
-    let movie: Movie
+    @ObservedObject var detailsModel: DetailsViewModel
+//    let movie: Movie
+    
+    init(movie: Movie) {
+        _detailsModel = ObservedObject(wrappedValue: DetailsViewModel(movie: movie))
+    }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 10) {
                 CenterView
                 Description
-            }
-            .onAppear {
-                detailsModel.movie = movie
-                detailsModel.getDetails()
             }
         }
     }
@@ -36,43 +36,43 @@ extension DetailsView {
                 .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.6)
                 .shadow(color: .black, radius: 30, x: 5, y: 10)
                 .overlay{
-                    VStack(alignment: .center){
-                        detailsModel.promoImage?
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .padding(.top, 10)
-                        VStack(alignment: .center, spacing: 15) {
-                            Text(detailsModel.detailsData?.name ?? "No data!!!!!")
-                                .font(.title)
-                                .padding(.leading, 5)
-                            HStack {
-                                Text("Year:")
-                                Text(detailsModel.detailsData?.year ?? "No Year")
+                        VStack(alignment: .center){
+                            if detailsModel.isLoading {
+                                ProgressView()
+                            } else if let image = detailsModel.promoImage {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(12)
+                                    .padding(.top, 10)
                             }
-                            HStack {
-                                Text("Category: ")
-                                Text(detailsModel.detailsData?.category ?? "No Category")
+                            VStack(alignment: .center, spacing: 15) {
+                                Text(detailsModel.detailsData?.name ?? "No data!!!!!")
+                                    .font(.title)
+                                    .padding(.leading, 5)
+                                HStack {
+                                    Text("Year:")
+                                    Text(detailsModel.detailsData?.year ?? "No Year")
+                                }
+                                HStack {
+                                    Text("Category: ")
+                                    Text(detailsModel.detailsData?.category ?? "No Category")
+                                }
+                                HStack {
+                                    Text("Rate: ")
+                                    Text(detailsModel.detailsData?.rate ?? "No Rate")
+                                }
                             }
-                            HStack {
-                                Text("Rate: ")
-                                Text(detailsModel.detailsData?.rate ?? "No Rate")
-                            }
+                            .font(.headline)
+                            .padding(.leading, 5)
+                            
+                            PromoLink
+                            
                         }
-                        .font(.headline)
-                        .padding(.leading, 5)
-                        
-                        PromoLink
-                        
-                    }
-                    .padding(.bottom, 10)
-                    .padding(.trailing, 15)
+                        .padding(.bottom, 10)
+                        .padding(.trailing, 15)
                 }
             }
-        
-        
-        
-        
     }
     
     private var PromoLink: some View {

@@ -11,6 +11,7 @@ import SwiftUI
 class TimeManager {
     
     static let shared = TimeManager()
+    private init() { }
     
     func delay(seconds: CGFloat, completion: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {

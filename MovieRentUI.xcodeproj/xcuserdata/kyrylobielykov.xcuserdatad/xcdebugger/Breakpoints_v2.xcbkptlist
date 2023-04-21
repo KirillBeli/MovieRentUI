@@ -20,5 +20,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42D6F267-38F9-45C1-9AAF-820C77CDE7ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieRentUI/MVVM/Home/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "BuildedHome"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "42D6F267-38F9-45C1-9AAF-820C77CDE7ED - 7136a32932b087d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt;&gt; in MovieRentUI.HomeView.BuildedHome.getter : some"
+                  moduleName = "MovieRentUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyrylobielykov/Desktop/SwiftUI/MovieRentUI/MovieRentUI/MVVM/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "42D6F267-38F9-45C1-9AAF-820C77CDE7ED - b00e443fce5a9f6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt;&gt; in MovieRentUI.HomeView.BuildedHome.getter : some"
+                  moduleName = "MovieRentUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyrylobielykov/Desktop/SwiftUI/MovieRentUI/MovieRentUI/MVVM/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "42D6F267-38F9-45C1-9AAF-820C77CDE7ED - 5b46c5464cabf155"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(MovieRentUI.ToolBarView, MovieRentUI.SearchBarView, &lt;&lt;opaque return type of MovieRentUI.HomeView.MovieList : some&gt;&gt;.0)&gt;&gt; in MovieRentUI.HomeView.BuildedHome.getter : some"
+                  moduleName = "MovieRentUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kyrylobielykov/Desktop/SwiftUI/MovieRentUI/MovieRentUI/MVVM/Home/HomeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

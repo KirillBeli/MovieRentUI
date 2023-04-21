@@ -10,21 +10,21 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     
+    //MARK: - Properties
     @ObservedObject var launchModel: LaunchViewModel = LaunchViewModel()
     @Published var filteredMovies: [Movie] = []
     @Published var searchText: String = ""
     @Published var title: String = LocalizedString.MoviesTitle.movies
+    @State var showSheet: Bool = false
     private var cancellables: Set<AnyCancellable> = []
     let localized = LocalizedString.MoviesTitle.self
     
     init() {
-        
         performSearch()
     }
     
-    
+    //MARK: - Set Up Search Bar
     func performSearch() {
-        
         $searchText
             .combineLatest(launchModel.$moviesResult)
             .map { (text, startingMovies) -> [Movie] in
@@ -41,6 +41,7 @@ class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    //MARK: - Set Up Filter Action Sheet
     func getActionSheet() -> ActionSheet {
         
         let categoryLowercase = LocalizedString.MoviesFilter.self
@@ -48,11 +49,12 @@ class HomeViewModel: ObservableObject {
         let message = Text("Choose the category")
         
         let actionButton: ActionSheet.Button = .default(Text(localized.action)) {
-            self.filteredMovies = self.launchModel.moviesResult.filter { [weak self] (movie) in
-                self?.title = self?.localized.action ?? ""
+            self.filteredMovies = self.launchModel.moviesResult.filter { (movie) in
                 return movie.category.lowercased().contains(categoryLowercase.action)
             }
+            self.title = self.localized.action
         }
+            
         let comedyButton: ActionSheet.Button = .default(Text(localized.comedy)) {
             self.filteredMovies = self.launchModel.moviesResult.filter { [weak self] (movie) in
                 self?.title = self?.localized.comedy ?? ""

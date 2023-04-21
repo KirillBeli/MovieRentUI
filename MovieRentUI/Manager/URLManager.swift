@@ -9,11 +9,8 @@ import Foundation
 
 class URLManager {
     
-    
     static let shared = URLManager()
-    private init() {
-    }
-    
+    private init() { }
     
     var urlBanner = URL(string: "https://x-mode.co.il/exam/allMovies/generalDeclaration.txt")
     var urlMovies = URL(string: "https://x-mode.co.il/exam/allMovies/allMovies.txt#")

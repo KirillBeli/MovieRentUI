@@ -25,13 +25,12 @@ struct ToolBarView: View {
     
     var body: some View {
         HStack {
-            
             if !hidden {
                 CircleButtonView(iconName: "chevron.left")
                     .onTapGesture(perform: onTapLeft )
             }
             CircleButtonView(iconName: "chevron.left").hidden()
-            Spacer()//.frame(width: UIScreen.main.bounds.width * 0.39, height: 60)
+            Spacer()
             Text(LocalizedString.MoviesTitle.movies)
                 .font(.title)
                 .fontWeight(.heavy)
@@ -48,5 +47,6 @@ struct ToolBarView_Previews: PreviewProvider {
     static var previews: some View {
         ToolBarView(title: "Movies", hidden: true, rightIcon: "heart", onTapLeft: {}, onTapRight: {})
             .previewLayout(.sizeThatFits)
+            .padding()
     }
 }

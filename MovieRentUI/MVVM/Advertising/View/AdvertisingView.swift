@@ -13,31 +13,25 @@ struct AdvertisingView: View {
     @ObservedObject var launchModel: LaunchViewModel = LaunchViewModel()
     @State var backToList: Bool = false
     
-    
     var body: some View {
-        
         ZStack {
            AdverView
         }
-        
-        
-//        if backToList {
-//            HomeView()
-//        } else {
-//          AdverView
-//        }
     }
 }
 
 extension AdvertisingView {
+    
     private var AdverView: some View {
         ZStack {
             Color.theme.imageBackground.ignoresSafeArea()
             Rectangle()
                     .overlay {
-                        launchModel.adImage?
-                            .resizable()
-                            .scaledToFill()
+                        if let image = launchModel.adImage {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFill()
+                        }
                     }
             .cornerRadius(20)
         }
